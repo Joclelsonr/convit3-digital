@@ -7,18 +7,45 @@ const fontRighteous = Righteous({
   weight: "400",
 });
 
-const Logo = () => {
+interface LogoProps {
+  size?: "sm" | "lg";
+}
+
+const Logo = ({ size }: LogoProps) => {
   return (
     <Link
       href="/"
-      className={`${fontRighteous.className} flex items-center gap-2`}
+      className={`${fontRighteous.className} ${
+        size === "lg" ? "flex-col" : ""
+      } flex items-center gap-2`}
     >
-      <Image src={"/logo.svg"} alt="logo" width={50} height={50} />
-      <div className="flex flex-col items-center text-lg leading-5">
-        <h1>
-          CONVIT<span className="text-blue-500">3</span>{" "}
-        </h1>
-        <h1>DIGITAL</h1>
+      <Image
+        src={"/logo.svg"}
+        alt="logo"
+        width={size === "lg" ? 100 : 50}
+        height={size === "lg" ? 100 : 50}
+      />
+      <div
+        className={`${
+          size === "lg"
+            ? "text-5xl"
+            : "flex flex-col items-center text-lg leading-5"
+        }`}
+      >
+        {size === "lg" ? (
+          <>
+            <h1>
+              CONVIT<span className="text-blue-500">3</span> DIGITAL
+            </h1>
+          </>
+        ) : (
+          <>
+            <h1>
+              CONVIT<span className="text-blue-500">3</span>{" "}
+            </h1>
+            <h1>DIGITAL</h1>
+          </>
+        )}
       </div>
     </Link>
   );
