@@ -1,9 +1,8 @@
 import Event from "../events/model/Event";
-import Id from "../shared/Id";
 
 const events: Event[] = [
   {
-    id: Id.new(),
+    id: "4c1d8915-60a1-43f9-aff2-459c400d9981",
     alias: "evento-fullstack",
     password: "password123",
     name: "Evento de Desenvolvimento Fullstack",
@@ -18,7 +17,7 @@ const events: Event[] = [
     expectedGuests: 200,
     guests: [
       {
-        id: Id.new(),
+        id: "48334517-d513-4012-810a-42d1839591f9",
         name: "Alice Silva",
         email: "alice@example.com",
         confirmed: true,
@@ -26,7 +25,7 @@ const events: Event[] = [
         qtdCompanion: 1,
       },
       {
-        id: Id.new(),
+        id: "46ac2c46-3525-4683-aecd-194f5995921f",
         name: "Carlos Pereira",
         email: "carlos@example.com",
         confirmed: false,
@@ -34,7 +33,7 @@ const events: Event[] = [
         qtdCompanion: 0,
       },
       {
-        id: Id.new(),
+        id: "daa82661-2646-49e3-b271-4144346b8798",
         name: "Beatriz Lima",
         email: "beatriz@example.com",
         confirmed: true,
@@ -44,7 +43,7 @@ const events: Event[] = [
     ],
   },
   {
-    id: Id.new(),
+    id: "89946303-4c3c-4083-a8fb-301d08dfece2",
     alias: "evento-js-avancado",
     password: "js2024",
     name: "Workshop Avançado de JavaScript",
@@ -58,7 +57,7 @@ const events: Event[] = [
     expectedGuests: 100,
     guests: [
       {
-        id: Id.new(),
+        id: "0ad93b34-7e69-4cea-b665-99c167fbae19",
         name: "Eduardo Santos",
         email: "eduardo@example.com",
         confirmed: true,
@@ -66,7 +65,7 @@ const events: Event[] = [
         qtdCompanion: 0,
       },
       {
-        id: Id.new(),
+        id: "da027341-ebee-4ddd-8378-0cc99326779b",
         name: "Fernanda Costa",
         email: "fernanda@example.com",
         confirmed: true,
@@ -76,7 +75,7 @@ const events: Event[] = [
     ],
   },
   {
-    id: Id.new(),
+    id: "59bb52d8-e392-4767-8c93-3099658f2ebe",
     alias: "evento-dev-frontend",
     password: "front123",
     name: "Bootcamp de Desenvolvimento Frontend",
@@ -90,7 +89,7 @@ const events: Event[] = [
     expectedGuests: 150,
     guests: [
       {
-        id: Id.new(),
+        id: "faa6c274-a1d6-4720-9039-6c5c8a71e180",
         name: "Gabriela Rocha",
         email: "gabriela@example.com",
         confirmed: true,
@@ -98,7 +97,7 @@ const events: Event[] = [
         qtdCompanion: 1,
       },
       {
-        id: Id.new(),
+        id: "8ccebbb2-7855-41e5-9ec2-c04b6bcb0bd0",
         name: "Hugo Nogueira",
         email: "hugo@example.com",
         confirmed: false,
@@ -106,7 +105,7 @@ const events: Event[] = [
         qtdCompanion: 0,
       },
       {
-        id: Id.new(),
+        id: "3daa71e6-34c0-4b47-b07a-d51df954a3d9",
         name: "Isabela Martins",
         email: "isabela@example.com",
         confirmed: true,
@@ -116,7 +115,7 @@ const events: Event[] = [
     ],
   },
   {
-    id: Id.new(),
+    id: "30d4e4d1-a82a-4b4a-ac0c-ef7d8e97426b",
     alias: "casamento-alberto-marina",
     password: "casamento2024",
     name: "Casamento do Alberto e Marina",
@@ -131,7 +130,7 @@ const events: Event[] = [
     expectedGuests: 150,
     guests: [
       {
-        id: Id.new(),
+        id: "df921c4b-1236-45ed-bd0e-831d9bd46e6d",
         name: "Bruno Cardoso",
         email: "bruno@example.com",
         confirmed: true,
@@ -139,7 +138,7 @@ const events: Event[] = [
         qtdCompanion: 1,
       },
       {
-        id: Id.new(),
+        id: "ade5c89f-ece1-4ffe-891e-45b857752591",
         name: "Carla Mendes",
         email: "carla@example.com",
         confirmed: true,
@@ -149,7 +148,7 @@ const events: Event[] = [
     ],
   },
   {
-    id: Id.new(),
+    id: "5919ac41-1849-464f-a642-03a1638ea5bd",
     alias: "aniversario-joao",
     password: "joao2024",
     name: "Aniversário do João - 30 Anos",
@@ -164,7 +163,7 @@ const events: Event[] = [
     expectedGuests: 80,
     guests: [
       {
-        id: Id.new(),
+        id: "a8f25a9f-7791-4936-b302-b43a882c08de",
         name: "Maria Souza",
         email: "maria@example.com",
         confirmed: true,
@@ -172,7 +171,7 @@ const events: Event[] = [
         qtdCompanion: 2,
       },
       {
-        id: Id.new(),
+        id: "d6e597c1-00f7-4040-adc9-06bc0e987b39",
         name: "José Almeida",
         email: "jose@example.com",
         confirmed: false,
@@ -182,7 +181,7 @@ const events: Event[] = [
     ],
   },
   {
-    id: Id.new(),
+    id: "83973d63-5129-4af3-98d2-13954b723223",
     alias: "inauguracao-loja-estrela",
     password: "estrela2024",
     name: "Inauguração da Loja Estrela",
@@ -197,7 +196,7 @@ const events: Event[] = [
     expectedGuests: 300,
     guests: [
       {
-        id: Id.new(),
+        id: "c97c8de7-dbe5-46a3-90a9-4b870b449a70",
         name: "Cláudia Lima",
         email: "claudia@example.com",
         confirmed: true,
@@ -205,7 +204,7 @@ const events: Event[] = [
         qtdCompanion: 3,
       },
       {
-        id: Id.new(),
+        id: "ae3694f8-521b-4ec8-a57d-329d3d5e8ec9",
         name: "Ricardo Barbosa",
         email: "ricardo@example.com",
         confirmed: true,
@@ -215,7 +214,7 @@ const events: Event[] = [
     ],
   },
   {
-    id: Id.new(),
+    id: "c45977fa-9f95-4dc9-9d3c-3fea5404fd2c",
     alias: "reuniao-familia-oliveira",
     password: "familia2024",
     name: "Reunião da Família Oliveira",
@@ -229,7 +228,7 @@ const events: Event[] = [
     expectedGuests: 50,
     guests: [
       {
-        id: Id.new(),
+        id: "8ac6e70d-dc08-4baf-9f46-4d26a3aae18b",
         name: "Thiago Oliveira",
         email: "thiago@example.com",
         confirmed: true,
@@ -237,7 +236,7 @@ const events: Event[] = [
         qtdCompanion: 4,
       },
       {
-        id: Id.new(),
+        id: "0b2766fc-463f-4c5f-a1c1-efa0287e92f0",
         name: "Letícia Oliveira",
         email: "leticia@example.com",
         confirmed: true,
