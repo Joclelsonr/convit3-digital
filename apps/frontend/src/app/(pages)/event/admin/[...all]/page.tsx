@@ -1,14 +1,11 @@
 "use client";
 
-import EventDashboard from "@/components/event/EventDashboard";
-import EventFormPassword from "@/components/event/EventFormPassword";
-
-import events from "@/core/constants/events";
-import Event from "@/core/events/model/Event";
-import Guest from "@/core/events/model/Guest";
-
+import { Event, Guest, events } from "core";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+
+import EventDashboard from "@/components/event/EventDashboard";
+import EventFormPassword from "@/components/event/EventFormPassword";
 
 export default function AdminEventPage() {
   const { all }: any = useParams();

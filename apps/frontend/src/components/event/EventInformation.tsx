@@ -1,5 +1,5 @@
-import Event from "@/core/events/model/Event";
-import Information from "../shared/information";
+import { Event } from "core";
+import Information from "../shared/Information";
 
 export interface EventInformationProps {
   event: Event;

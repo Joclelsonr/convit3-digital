@@ -1,4 +1,4 @@
-import Guest from "@/core/events/model/Guest";
+import { Guest } from "core";
 import GuestItem from "./GuestItem";
 
 export interface GuestListProps {

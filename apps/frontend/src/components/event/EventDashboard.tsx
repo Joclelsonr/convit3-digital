@@ -1,8 +1,7 @@
-import Event from "@/core/events/model/Event";
+import { Event, Guest } from "core";
 import EventInformation from "./EventInformation";
 import AccessQRcode from "./AccessQRcode";
 import Statistic from "../shared/Statistic";
-import Guest from "@/core/events/model/Guest";
 import GuestList from "./GuestList";
 
 export interface EventDashboardProps {
