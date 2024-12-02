@@ -49,4 +49,4 @@ declare class Password {
     static create(size?: number): string;
 }
 
-export { Alias, DateFormatter as Date, type Event, type Guest, Id, Password, complementaryEvent, complementaryGuest, createEmptyEvent, createEmptyguest, events };
+export { Alias, DateFormatter, type Event, type Guest, Id, Password, complementaryEvent, complementaryGuest, createEmptyEvent, createEmptyguest, events };

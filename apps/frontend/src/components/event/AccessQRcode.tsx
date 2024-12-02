@@ -7,7 +7,7 @@ export interface AccessQRcodeProps {
 
 export default function AccessQRcode({ event }: AccessQRcodeProps) {
   return (
-    <div className="flex flex-col justify-center items-center gap-4 border rounded-lg border-zinc-800 py-10">
+    <div className="flex flex-col justify-center items-center border rounded-lg border-zinc-800 p-4">
       <span className="text-sm font-light text-zinc-400">
         Acesse via Mobile
       </span>

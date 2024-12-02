@@ -21,7 +21,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   Alias: () => Alias,
-  Date: () => DateFormatter,
+  DateFormatter: () => DateFormatter,
   Id: () => Id,
   Password: () => Password,
   complementaryEvent: () => complementaryEvent,
@@ -400,6 +400,9 @@ var Alias = class {
 // src/shared/Date.ts
 var DateFormatter = class {
   static format(date) {
+    if (!(date instanceof Date)) {
+      throw new TypeError("O argumento deve ser uma inst\xE2ncia de Date.");
+    }
     const pad = (number) => number.toString().padStart(2, "0");
     const currentDate = date ?? /* @__PURE__ */ new Date();
     const year = currentDate.getFullYear();
@@ -423,7 +426,7 @@ var DateFormatter = class {
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Alias,
-  Date,
+  DateFormatter,
   Id,
   Password,
   complementaryEvent,

@@ -34,16 +34,16 @@ const Logo = ({ size }: LogoProps) => {
       >
         {size === "lg" ? (
           <>
-            <h1>
+            <h1 className="text-white">
               CONVIT<span className="text-blue-500">3</span> DIGITAL
             </h1>
           </>
         ) : (
           <>
-            <h1>
+            <h1 className="text-white">
               CONVIT<span className="text-blue-500">3</span>{" "}
             </h1>
-            <h1>DIGITAL</h1>
+            <h1 className="text-white">DIGITAL</h1>
           </>
         )}
       </div>

@@ -1,6 +1,6 @@
 import {
   Event,
-  Date,
+  DateFormatter,
   Id,
   Guest,
   complementaryEvent,
@@ -32,7 +32,7 @@ export class EventsController {
   @Get('validate/:alias/:id')
   async validateAlias(@Param('alias') alias: string, @Param('id') id: string) {
     const event = await this.eventPrisma.getByAlias(alias);
-    return { valid: !!event || event.id === id };
+    return { valid: !event || event.id === id };
   }
 
   @Post('access')
@@ -56,6 +56,7 @@ export class EventsController {
 
     const fullEvent = complementaryEvent(this.deserializeDate(event));
     await this.eventPrisma.saveEvent(fullEvent);
+    return this.serializeDate(fullEvent);
   }
 
   @Post(':alias/guest')
@@ -64,21 +65,21 @@ export class EventsController {
     if (!event) {
       throw new Error('Event not found');
     }
-    const fullguest = complementaryGuest(guest);
-    await this.eventPrisma.saveGuest(event, fullguest);
+    const fullGuest = complementaryGuest(guest);
+    await this.eventPrisma.saveGuest(event, fullGuest);
   }
 
   private serializeDate(events: Event) {
     return {
       ...events,
-      date: Date.format(events.date),
+      date: DateFormatter.format(events.date),
     };
   }
 
   private deserializeDate(events: any) {
     return {
       ...events,
-      date: Date.unformat(events.date),
+      date: DateFormatter.unformat(events.date),
     };
   }
 }

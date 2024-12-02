@@ -9,48 +9,47 @@ export interface EventDashboardProps {
   confirmed: Guest[];
   absent: Guest[];
   total: number;
+  loadGuests: () => void;
 }
 
-export default function EventDashboard({
-  event,
-  confirmed,
-  absent,
-  total,
-}: EventDashboardProps) {
+export default function EventDashboard(props: EventDashboardProps) {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex gap-2 self-stretch">
-        <EventInformation event={event} className="flex-1" />
-        <AccessQRcode event={event} />
+        <EventInformation event={props.event} className="flex-1" />
+        <AccessQRcode event={props.event} />
       </div>
       <div className="grid grid-cols-3 gap-6 mt-4">
         <Statistic
           text="Expectativa de convidados"
-          value={event.expectedGuests}
+          value={props.event.expectedGuests}
           image="/icons/guests.svg"
         />
         <Statistic
           text="Confirmados"
-          value={confirmed.length}
+          value={props.confirmed.length}
           image="/icons/confirmed.svg"
         />
         <Statistic
           text="Total de convidados"
-          value={total}
+          value={props.total}
           image="/icons/companions.svg"
         />
       </div>
-      <button className="flex items-center justify-center gap-2 self-end bg-blue-500 rounded-lg py-2 px-4 mt-12">
+      <button
+        className="flex items-center justify-center gap-2 self-end bg-blue-500 rounded-lg py-2 px-4 mt-12"
+        onClick={props.loadGuests}
+      >
         <span>Atualizar lista</span>
       </button>
       <span className="flex py-2 text-xl font-bold text-white/80">
         Convidados que confirmaram PRESENÇA
       </span>
-      <GuestList guests={confirmed} />
+      <GuestList guests={props.confirmed} />
       <span className="flex py-2 text-xl font-bold text-white/80">
         Convidados que confirmaram AUSÊNCIA
       </span>
-      <GuestList guests={absent} />
+      <GuestList guests={props.absent} />
     </div>
   );
 }

@@ -29,7 +29,7 @@ export class EventPrisma {
     return (await this.prisma.event.findMany()) as any;
   }
 
-  async getById(id: string, full: boolean = false): Promise<Event> {
+  async getById(id: string, full: boolean = true): Promise<Event> {
     return await this.prisma.event.findUnique({
       where: { id },
       include: { guests: full },

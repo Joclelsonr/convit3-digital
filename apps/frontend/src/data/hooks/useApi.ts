@@ -23,10 +23,10 @@ export default function useApi() {
     return convertJson(response);
   }, []);
 
-  function convertJson(response: Response) {
+  async function convertJson(response: Response) {
     let content;
     try {
-      content = response.json();
+      content = await response.json();
     } catch (error) {
       if (!response.ok) {
         throw new Error(`an unexpected error occurred ${response.status}`);

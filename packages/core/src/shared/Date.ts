@@ -1,5 +1,9 @@
 export default class DateFormatter {
   static format(date: Date): string {
+    if (!(date instanceof Date)) {
+      throw new TypeError("O argumento deve ser uma instância de Date.");
+    }
+
     const pad = (number: number) => number.toString().padStart(2, "0");
 
     const currentDate = date ?? new Date();

@@ -1,17 +1,23 @@
 "use client";
 
 import { createContext, useCallback, useEffect, useState } from "react";
-import { createEmptyEvent, createEmptyguest, Date, Event, Guest } from "core";
-import { useRouter } from "next/router";
+import {
+  createEmptyEvent,
+  createEmptyguest,
+  DateFormatter,
+  Event,
+  Guest,
+} from "core";
 import useApi from "../hooks/useApi";
+import { useRouter } from "next/navigation";
 
 export interface EventContextProps {
   event: Partial<Event>;
   guest: Partial<Guest>;
   aliasValid: boolean;
 
-  changeEvent(event: Event): void;
-  changeGuest(guest: Guest): void;
+  changeEvent(event: Partial<Event>): void;
+  changeGuest(guest: Partial<Guest>): void;
   loadEvent(id: string): Promise<void>;
   saveEvent(): Promise<void>;
   addGuest(): void;
@@ -28,11 +34,11 @@ export function EventContexProvider(props: any) {
 
   const saveEvent = useCallback(async () => {
     try {
-      const createEvent = await httpPost("/event", event);
+      const createEvent = await httpPost("/events", event);
       router.push("/event/success");
       setEvent({
         ...createEvent,
-        data: Date.unformat(createEvent.date),
+        data: DateFormatter.unformat(createEvent.date),
       });
     } catch (error) {
       console.log(error);
@@ -41,11 +47,12 @@ export function EventContexProvider(props: any) {
 
   const loadEvent = useCallback(
     async (id: string) => {
+      if (!id) return;
       try {
-        const event = await httpGet(`/event/${id}`);
+        const event = await httpGet(`/events/${id}`);
         setEvent({
           ...event,
-          date: Date.unformat(event.date),
+          date: DateFormatter.unformat(event.date),
         });
       } catch (error) {
         console.log(error);
@@ -56,7 +63,7 @@ export function EventContexProvider(props: any) {
 
   const addGuest = useCallback(async () => {
     try {
-      await httpPost(`/event/${event.alias}/guest`, guest);
+      await httpPost(`/events/${event.alias}/guest`, guest);
       router.push("/invitation/success");
     } catch (error) {
       console.log(error);
@@ -66,7 +73,7 @@ export function EventContexProvider(props: any) {
   const validAlias = useCallback(async () => {
     try {
       const { valid } = await httpGet(
-        `/event/validate/${event.alias}/${event.id}`
+        `/events/validate/${event.alias}/${event.id}`
       );
       setAliasValid(valid);
     } catch (error) {
